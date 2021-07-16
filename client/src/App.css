@@ -2,11 +2,18 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #003699;
+  --primary-color: #003099;
+  --secondary-color: #008f99;
+  --third-color: #420099;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --gradient-color: linear-gradient(
+    60deg,
+    var(--third-color),
+    var(--secondary-color)
+  );
 }
 
 * {
@@ -16,7 +23,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Encode Sans Light", "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -46,6 +53,22 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
+}
+
+.round {
+  border-radius: 5px;
+}
+
+.jump:hover {
+  transform: translateY(-10%);
+}
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
 }
 
 /* Text Styles*/
@@ -194,6 +217,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 5px;
 }
 
 .btn-link {
@@ -231,11 +255,35 @@ img {
   color: #333;
 }
 
+.btn-gradient,
+.bg-gradient,
+.badge-gradient,
+.alert-gradient {
+  background: var(--gradient-color);
+  color: #fff;
+}
+
 .btn-primary,
 .bg-primary,
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-secondary,
+.bg-secondary,
+.badge-secondary,
+.alert-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.btn-third,
+.bg-third,
+.badge-third,
+.alert-third {
+  background: var(--third-color);
   color: #fff;
 }
 
@@ -280,6 +328,10 @@ img {
   border: #ccc solid 1px;
 }
 
+.btn {
+  transition: transform 0.5s;
+}
+
 .btn:hover {
   opacity: 0.8;
 }
@@ -296,6 +348,7 @@ img {
 /* Forms */
 input {
   margin: 1.2rem 0;
+  border-radius: 5px;
 }
 
 .form-text {
@@ -398,6 +451,16 @@ table th {
 .item-exit-active {
   opacity: 0;
   transition: opacity 1000ms ease-in-out;
+}
+
+/* Keyframes */
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Mobile Styles */

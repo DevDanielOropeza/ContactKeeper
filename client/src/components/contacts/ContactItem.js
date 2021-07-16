@@ -12,14 +12,14 @@ const ContactItem = ({ contact }) => {
   };
 
   return (
-    <div className="card bg-light">
+    <div className="card bg-light round fade-in">
       <h3 className="text-primary text-left">
         {name}{" "}
         <span
           style={{ float: "right" }}
           className={
             `badge ` +
-            (type === "professional" ? "badge-success" : "badge-primary")
+            (type === "professional" ? "badge-secondary" : "badge-third")
           }
         >
           {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -39,14 +39,14 @@ const ContactItem = ({ contact }) => {
       </ul>
       <p>
         <button
-          className="btn btn-dark btn-sm"
+          className="btn btn-dark btn-sm jump"
           onClick={() => {
             setCurrent(contact);
           }}
         >
           Edit
         </button>
-        <button className="btn btn-danger btn-sm" onClick={onDelete}>
+        <button className="btn btn-danger btn-sm jump" onClick={onDelete}>
           Delete
         </button>
       </p>

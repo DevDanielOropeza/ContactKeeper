@@ -36,7 +36,7 @@ const Navbar = ({ title, icon }) => {
     </Fragment>
   );
   return (
-    <div className="navbar bg-primary">
+    <div className="navbar bg-gradient">
       <h1>
         <i className={icon}> </i> {title}
       </h1>
